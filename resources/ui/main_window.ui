@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="IdasenMainWindow" parent="GtkApplicationWindow">
+    <property name="title" translatable="yes">IDÅSEN table control</property>
+    <style>
+      <class name="devel" />
+    </style>
+    <child type="titlebar">
+      <object class="AdwHeaderBar">
+        <child type="end">
+          <object class="GtkMenuButton">
+            <property name="icon-name">open-menu-symbolic</property>
+            <property name="menu-model">primary_menu</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwClamp">
+        <property name="child">
+          <object class="GtkGrid">
+            <property name="margin-top">36</property>
+            <property name="margin-bottom">36</property>
+            <property name="margin-start">36</property>
+            <property name="margin-end">36</property>
+            <property name="column-spacing">12</property>
+            <property name="row-spacing">12</property>
+            <property name="row-homogeneous">true</property>
+            <binding name="sensitive">
+              <lookup name="enable-control">IdasenMainWindow</lookup>
+            </binding>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Stand</property>
+                <property name="valign">start</property>
+                <property name="halign">start</property>
+                <property name="action-name">app.stand</property>
+                <style>
+                  <class name="pill" />
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="hexpand">yes</property>
+                <property name="halign">end</property>
+                <binding name="label">
+                  <lookup name="desk-name">IdasenMainWindow</lookup>
+                </binding>
+                <style>
+                  <class name="desk-name-label" />
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">start</property>
+                <property name="hexpand">yes</property>
+                <binding name="label">
+                  <lookup name="desk-height">IdasenMainWindow</lookup>
+                </binding>
+                <style>
+                  <class name="desk-height-label" />
+                </style>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Sit</property>
+                <property name="valign">end</property>
+                <property name="halign">start</property>
+                <property name="action-name">app.sit</property>
+                <style>
+                  <class name="pill" />
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="vexpand">yes</property>
+                <property name="valign">center</property>
+                <style>
+                  <class name="linked" />
+                </style>
+                <child>
+                  <object class="GtkButton">
+                    <property name="icon-name">gtk-go-up</property>
+                    <property name="action-name">app.up</property>
+                    <style>
+                      <class name="pill" />
+                      <class name="control-button-up" />
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="icon-name">gtk-go-down</property>
+                    <property name="action-name">app.down</property>
+                    <style>
+                      <class name="pill" />
+                      <class name="control-button-down" />
+                    </style>
+                  </object>
+                </child>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">0</property>
+                  <property name="row-span">3</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+  </template>
+
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Set height</attribute>
+        <attribute name="action">app.set-position</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Preference</attribute>
+        <attribute name="action">app.preference</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">About</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

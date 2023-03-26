@@ -1,0 +1,10 @@
+# Файлы графического интерфейса
+resources/ui/bluetooth_device_info.ui
+resources/ui/position.ui
+resources/ui/main_window.ui
+resources/ui/preference.ui
+
+# Исходники
+src/idasen_application.c
+src/idasen_desk.c
+src/idasen_preference.c

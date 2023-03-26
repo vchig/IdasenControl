@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=IDÅSEN Control
+Name[ru]=IDÅSEN Управление
+Comment=Application for control IDÅSEN desk.
+Icon=io.github.vchig.IdasenControl
+TryExec=idasen-control
+Exec=idasen-control
+Type=Application
+Encoding=UTF-8
+StartupNotify=true
+Terminal=false
+Categories=GNOME;GTK
+# DBusActivatable=true

@@ -1,0 +1,26 @@
+app-id: io.github.vchig.IdasenControl
+
+runtime: org.gnome.Platform
+runtime-version: '42'
+sdk: org.gnome.Sdk
+
+command: idasen-control
+
+finish-args:
+  - --share=ipc
+  - --device=dri
+  - --socket=x11
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --system-talk-name=org.bluez
+  - --talk-name=org.gtk.vfs.*
+  - --filesystem=xdg-run/gvfsd
+
+modules:
+  - name: IdasenControl
+    buildsystem: meson
+    config-opts:
+      - -Dbuildtype=release
+    sources:
+      - type: dir
+        path: ../..

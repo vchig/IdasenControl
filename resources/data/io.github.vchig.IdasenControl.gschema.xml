@@ -1,0 +1,31 @@
+<schemalist>
+  <schema id="io.github.vchig.IdasenControl" path="/io/github/vchig/IdasenControl/"
+    gettext-domain="idasen-control">
+    <key name="desk-mac-address" type="s">
+      <default>""</default>
+      <summary>Mac address</summary>
+      <description>
+        Bt mac address of idasen desk.
+      </description>
+    </key>
+    <key name="desk-sit-position" type="d">
+      <default>81.4</default>
+      <summary>Sit dest position</summary>
+      <description>Sit desk position</description>
+    </key>
+    <key name="desk-stand-position" type="d">
+      <default>127</default>
+      <summary>Stand desk position</summary>
+      <description>Stand desk postion</description>
+    </key>
+    <key name="background-mode" type="b">
+      <default>false</default>
+    </key>
+    <key name="reconnect" type="b">
+      <default>false</default>
+    </key>
+    <key name="reconnect-timeout" type="u">
+      <default>10</default>
+    </key>
+  </schema>
+</schemalist>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="libadwaita" version="1.0" />
+  <template class="IdasenPreference" parent="AdwPreferencesWindow">
+    <property name="modal">true</property>
+    <property name="destroy_with_parent">true</property>
+    <property name="icon_name">gtk-preferences</property>
+    <property name="default-width">640</property>
+    <property name="default-height">576</property>
+    <style>
+      <class name="preferences" />
+    </style>
+    <property name="content">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar">
+            <property name="title-widget">
+              <object class="AdwWindowTitle">
+                <property name="title" translatable="yes">Preference</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="vexpand">true</property>
+            <property name="child">
+              <object class="AdwClamp">
+                <property name="child">
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="margin-top">24</property>
+                    <property name="margin-bottom">24</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="spacing">6</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">General</property>
+                        <property name="ellipsize">end</property>
+                        <property name="use-markup">true</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="heading" />
+                          <class name="h4" />
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">General preferences</property>
+                        <property name="use-markup">true</property>
+                        <property name="wrap">true</property>
+                        <property name="wrap-mode">word-char</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="dim-label" />
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkListBox">
+                        <property name="selection-mode">none</property>
+                        <style>
+                          <class name="boxed-list" />
+                        </style>
+                        <child>
+                          <object class="AdwActionRow" id="background_mode">
+                            <property name="title" translatable="yes">Background mode</property>
+                            <property name="subtitle" translatable="yes">Run application in background mode</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="repeat_connection">
+                            <property name="title" translatable="yes">Auto reconnect</property>
+                            <property name="subtitle" translatable="yes">Auto reconnect to bluetooth device</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="repeat_timeout">
+                            <property name="title" translatable="yes">Reconnect timeout</property>
+                            <property name="subtitle" translatable="yes">Timeout between reconnection</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Positions</property>
+                        <property name="margin-top">24</property>
+                        <property name="ellipsize">end</property>
+                        <property name="use-markup">true</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="heading" />
+                          <class name="h4" />
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Predefined sit/stand positions</property>
+                        <property name="use-markup">true</property>
+                        <property name="wrap">true</property>
+                        <property name="wrap-mode">word-char</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="dim-label" />
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkListBox">
+                        <property name="selection-mode">none</property>
+                        <style>
+                          <class name="boxed-list" />
+                        </style>
+                        <child>
+                          <object class="DeskPositionRow" id="stand_position_row">
+                            <property name="title" translatable="yes">Stand</property>
+                            <property name="subtitle" translatable="yes">Predefined standing position</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="DeskPositionRow" id="sit_position_row">
+                            <property name="title" translatable="yes">Sit</property>
+                            <property name="subtitle" translatable="yes">Predefined sitting position</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Devices</property>
+                        <property name="margin-top">24</property>
+                        <property name="ellipsize">end</property>
+                        <property name="use-markup">true</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="heading" />
+                          <class name="h4" />
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Bluetooth device list</property>
+                        <property name="use-markup">true</property>
+                        <property name="wrap">true</property>
+                        <property name="wrap-mode">word-char</property>
+                        <property name="xalign">0</property>
+                        <style>
+                          <class name="dim-label" />
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkListBox" id="devices_list_box">
+                        <property name="selection-mode">single</property>
+                        <signal name="row-selected" handler="device_row_selected" />
+                        <style>
+                          <class name="boxed-list" />
+                        </style>
+                        <!-- childs -->
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+
+  <object class="GtkAdjustment" id="repeat_adjustment">
+    <property name="lower">5</property>
+    <property name="upper">300</property>
+    <property name="value">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+</interface>

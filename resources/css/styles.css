@@ -1,0 +1,23 @@
+.control-button-up {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.control-button-down {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.desk-name-label {
+  font-size: 24pt;
+  font-weight: normal;
+}
+
+.desk-height-label {
+  font-size: 24pt;
+  font-weight: bold;
+}

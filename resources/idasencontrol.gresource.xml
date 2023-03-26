@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/io/github/vchig/IdasenControl/ui/">
+        <file compressed="true">bluetooth_device_info.ui</file>
+        <file compressed="true">main_window.ui</file>
+        <file compressed="true">position.ui</file>
+        <file compressed="true">preference.ui</file>
+    </gresource>
+    <gresource prefix="/io/github/vchig/IdasenControl/css">
+        <file compressed="true">styles.css</file>
+    </gresource>
+</gresources>

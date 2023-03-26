@@ -1,0 +1,166 @@
+#
+# Vadim Chigrinov <v.chigrinov@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unnamed project\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-17 19:40+0300\n"
+"PO-Revision-Date: 2023-03-14 15:59+0300\n"
+"Last-Translator: Vadim Chigrinov <v.chigrinov@gmail.com>\n"
+"Language-Team: Russian <>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 41.0\n"
+
+#: resources/ui/bluetooth_device_info.ui:4
+msgid "Bluetooth device info"
+msgstr "Информация об блютуз устройстве"
+
+#: resources/ui/bluetooth_device_info.ui:35
+msgid "Connected"
+msgstr "Подключен"
+
+#: resources/ui/bluetooth_device_info.ui:54
+msgid "Paired"
+msgstr "Сопряжён"
+
+#: resources/ui/bluetooth_device_info.ui:73
+msgid "Address"
+msgstr "Адрес"
+
+#: resources/ui/bluetooth_device_info.ui:93
+msgid "Select"
+msgstr "Выбрать"
+
+#: resources/ui/position.ui:20
+msgid "Height"
+msgstr "Высота"
+
+#: resources/ui/main_window.ui:4 src/idasen_application.c:33
+msgid "IDÅSEN table control"
+msgstr "Управление столом IDÅSEN"
+
+#: resources/ui/main_window.ui:34 resources/ui/preference.ui:122
+msgid "Stand"
+msgstr "Встать"
+
+#: resources/ui/main_window.ui:81 resources/ui/preference.ui:128
+msgid "Sit"
+msgstr "Сесть"
+
+#: resources/ui/main_window.ui:138
+msgid "Set height"
+msgstr "Установить высоту"
+
+#: resources/ui/main_window.ui:144 resources/ui/preference.ui:21
+msgid "Preference"
+msgstr "Настройки"
+
+#: resources/ui/main_window.ui:150
+msgid "About"
+msgstr "О программе"
+
+#: resources/ui/preference.ui:41
+msgid "General"
+msgstr "Общие"
+
+#: resources/ui/preference.ui:53
+msgid "General preferences"
+msgstr "Общие настройки"
+
+#: resources/ui/preference.ui:71
+msgid "Background mode"
+msgstr "Фоновый режим"
+
+#: resources/ui/preference.ui:72
+msgid "Run application in background mode"
+msgstr "Запускать приложение в фоне"
+
+#: resources/ui/preference.ui:77
+msgid "Auto reconnect"
+msgstr "Переподключение"
+
+#: resources/ui/preference.ui:78
+msgid "Auto reconnect to bluetooth device"
+msgstr "Переподключение к блютуз устройству"
+
+#: resources/ui/preference.ui:83
+msgid "Reconnect timeout"
+msgstr "Тайм-аут повторного подключения"
+
+#: resources/ui/preference.ui:84
+msgid "Timeout between reconnection"
+msgstr "Время ожидания между повторным подключением"
+
+#: resources/ui/preference.ui:91
+msgid "Positions"
+msgstr "Позиции"
+
+#: resources/ui/preference.ui:104
+msgid "Predefined sit/stand positions"
+msgstr "Предустановленные позиции положений \"Стоя\"/\"Сидя\""
+
+#: resources/ui/preference.ui:123
+msgid "Predefined standing position"
+msgstr "Предустановленная позиция \"Стоя\""
+
+#: resources/ui/preference.ui:129
+msgid "Predefined sitting position"
+msgstr "Предустановленная позиция \"Сидя\""
+
+#: resources/ui/preference.ui:136
+msgid "Devices"
+msgstr "Устройства"
+
+#: resources/ui/preference.ui:149
+msgid "Bluetooth device list"
+msgstr "Список блютуз устройств"
+
+#: src/idasen_application.c:24
+#, c-format
+msgid "%.1f cm"
+msgstr "%.1f см"
+
+#: src/idasen_application.c:34
+msgid "Program to control idasen desk."
+msgstr "Программа управления столом IDÅSEN."
+
+#: src/idasen_application.c:140
+msgid "Move to"
+msgstr "Переместить в"
+
+#: src/idasen_application.c:140
+msgid "Move"
+msgstr "Переместить"
+
+#: src/idasen_desk.c:333
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: src/idasen_preference.c:44
+msgid "Yes"
+msgstr "Да"
+
+#: src/idasen_preference.c:44
+msgid "No"
+msgstr "Нет"
+
+#~ msgid "Add to favorites"
+#~ msgstr "Добавить в избранное "
+
+#~ msgid "Bluetooth"
+#~ msgstr "Блютуз"
+
+#~ msgid "Favorites"
+#~ msgstr "Избранное"
+
+#~ msgid "Append to favorite"
+#~ msgstr "Добавить в избранное"
+
+#~ msgid "Append"
+#~ msgstr "Добавить"
