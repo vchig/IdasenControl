@@ -8,7 +8,7 @@
 #include <glib/gi18n.h>
 
 struct _IdasenPreference {
-  AdwPreferencesWindow parent;
+  AdwPreferencesDialog parent;
 
   BtDeviceList    *bt_device_list;
   GSettings       *settings;
@@ -21,7 +21,7 @@ struct _IdasenPreference {
   GtkAdjustment   *repeat_adjustment;
 };
 
-G_DEFINE_FINAL_TYPE(IdasenPreference, idasen_preference, ADW_TYPE_PREFERENCES_WINDOW)
+G_DEFINE_FINAL_TYPE(IdasenPreference, idasen_preference, ADW_TYPE_PREFERENCES_DIALOG)
 
 static GtkWidget *create_list_box_row(gpointer item, gpointer udata) {
   (void)udata;

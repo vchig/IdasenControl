@@ -131,7 +131,7 @@ static GActionEntry g_action_entries[] = {
 G_DEFINE_FINAL_TYPE(IdasenApplication, idasen_application, ADW_TYPE_APPLICATION)
 
 static gboolean idasen_application_reconnect_timeout(gpointer udata) {
-  g_return_if_fail(IDASEN_IS_APPLICATION(udata));
+  g_return_val_if_fail(IDASEN_IS_APPLICATION(udata), FALSE);
   IdasenApplication *self = IDASEN_APPLICATION(udata);
   g_debug("Try to connect '%s' desk.\n", idasen_desk_get_title(self->desk));
   if(!idasen_desk_get_is_connected(self->desk)) {
@@ -149,7 +149,8 @@ static void settings_changed(GSettings *settings, gchar *key, gpointer udata) {
   g_return_if_fail(IDASEN_IS_APPLICATION(udata));
   IdasenApplication *self = IDASEN_APPLICATION(udata);
   if(g_str_equal(key, "background-mode")) {
-    g_settings_get_boolean(settings, "background-mode") ? g_application_hold(self) : g_application_release(self);
+    g_settings_get_boolean(settings, "background-mode") ? g_application_hold(G_APPLICATION(self))
+                                                        : g_application_release(G_APPLICATION(self));
   } else if(g_str_equal(key, "reconnect")) {
     if(self->reconnect_timer) {
       g_source_remove(self->reconnect_timer);
@@ -180,7 +181,7 @@ static void idasen_application_startup(GApplication *app) {
   IdasenApplication *self = IDASEN_APPLICATION(app);
   g_settings_bind(self->settings, "desk-mac-address", self->desk, "device-address", G_SETTINGS_BIND_DEFAULT);
   if(g_settings_get_boolean(self->settings, "background-mode")) {
-    g_application_hold(self);
+    g_application_hold(G_APPLICATION(self));
   }
   if(g_settings_get_boolean(self->settings, "reconnect")) {
     self->reconnect_timer = g_timeout_add(g_settings_get_uint(self->settings, "reconnect-timeout") * _1s,
@@ -242,6 +243,6 @@ IdasenApplication *idasen_application_new() {
                       "application-id",
                       APPLICATION_ID,
                       "flags",
-                      G_APPLICATION_FLAGS_NONE,
+                      G_APPLICATION_DEFAULT_FLAGS,
                       NULL);
 }

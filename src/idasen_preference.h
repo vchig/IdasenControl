@@ -5,7 +5,7 @@ G_BEGIN_DECLS
 
 #define IDASEN_TYPE_PREFERENCE (idasen_preference_get_type())
 
-G_DECLARE_FINAL_TYPE(IdasenPreference, idasen_preference, IDASEN, PREFERENCE, AdwPreferencesWindow)
+G_DECLARE_FINAL_TYPE(IdasenPreference, idasen_preference, IDASEN, PREFERENCE, AdwPreferencesDialog)
 
 IdasenPreference *idasen_preference_new(void);
 
